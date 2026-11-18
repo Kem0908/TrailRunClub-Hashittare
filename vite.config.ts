@@ -15,5 +15,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
     base: '/TrailRunClub-Hashittare/',
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
   },
 });
