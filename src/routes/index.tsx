@@ -37,7 +37,8 @@ const stats = [
 ];
 
 function Home() {
-  const [lead, ...rest] = reports;
+  const lead = reports[0]!;
+  const rest = reports.slice(1);
   return (
     <>
       {/* Hero */}
@@ -103,7 +104,7 @@ function Home() {
             }
           />
           <div className="space-y-6 text-[0.97rem]">
-            <p className="first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-6xl first-letter:leading-none first-letter:text-primary">
+            <p className="font-display text-lg leading-loose md:text-xl">
               「トレランクラブ【走ったれ】」は、長野県北信・中信・東信エリアや北アルプス周辺、長野市の里山をフィールドに活動するトレイルランニングクラブです。
             </p>
             <p className="text-muted-foreground">
@@ -119,7 +120,7 @@ function Home() {
           {stats.map((s) => (
             <div key={s.label} className="border-b hairline py-8 pr-4 md:border-b-0 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0">
               <dt className="eyebrow text-muted-foreground">{s.label}</dt>
-              <dd className="mt-3 font-display text-2xl md:text-3xl">{s.value}</dd>
+              <dd className="mt-3 font-display text-xl lg:text-[1.65rem]">{s.value}</dd>
             </div>
           ))}
         </dl>

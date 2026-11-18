@@ -13,7 +13,8 @@ export const Route = createFileRoute("/reports/")({
 });
 
 function Reports() {
-  const [lead, ...rest] = reports;
+  const lead = reports[0]!;
+  const rest = reports.slice(1);
   return (
     <>
       <PageHero

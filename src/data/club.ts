@@ -328,7 +328,7 @@ export const joinSteps = [
 const WEEKDAYS = ["日", "月", "火", "水", "木", "金", "土"];
 
 export function formatDateParts(iso: string) {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = iso.split("-").map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
   return {
     year: y,

@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Club content (schedule, reports, members, fields, gear, FAQ) lives in `src/data/club.ts`; pages read from it so content edits stay in one file.
+- Each site section is its own route file with its own `head()` (via `src/lib/seo.ts`); no hash-anchor navigation, so every page is shareable and indexable.
+- Contact submissions are validated with the shared zod schema in `src/lib/contact-schema.ts` and inserted server-side by `src/lib/contact.functions.ts`; the table has RLS with no public policies so visitors can never read submissions.
