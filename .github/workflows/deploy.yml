@@ -40,8 +40,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NITRO_PRESET: github_pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
