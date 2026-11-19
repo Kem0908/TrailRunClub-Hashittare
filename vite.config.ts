@@ -13,7 +13,8 @@ export default defineConfig({
 
     // 静的生成はNitro側に任せる
     prerender: {
-      enabled: false,
+      enabled: true,
+      crawlLinks: true,
     },
   },
 
