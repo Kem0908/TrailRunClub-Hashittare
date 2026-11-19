@@ -44,10 +44,18 @@ jobs:
       - name: Inspect build output
         if: always()
         run: |
-          echo "===== dist ====="
-          find dist -maxdepth 4 -type f 2>/dev/null | sort || true
-          echo "===== .output ====="
-          find .output -maxdepth 4 -type f 2>/dev/null | sort || true
+          echo "===== public files ====="
+          find .output/public -maxdepth 2 -type f -print
+
+          echo "===== index file details ====="
+          if [ -f .output/public/index ]; then
+            file .output/public/index
+            head -c 500 .output/public/index
+            echo
+          fi
+
+          echo "===== nitro config ====="
+          cat .output/nitro.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
