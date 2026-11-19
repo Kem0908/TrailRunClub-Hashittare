@@ -11,9 +11,9 @@ export default defineConfig({
       entry: "server",
     },
 
+    // 静的生成はNitro側に任せる
     prerender: {
-      enabled: true,
-      crawlLinks: true,
+      enabled: false,
     },
   },
 
